@@ -1,9 +1,10 @@
 package Tailor_NewCiReleaseFragment.buildTypes
 
+import _Self.buildTypes.PdDeployFrontProjectToOctopus
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 
 object Tailor_NewCiReleaseFragment_DeployToDev : BuildType({
-    templates(AbsoluteId("PdDeployFrontProjectToOctopus"))
+    templates(PdDeployFrontProjectToOctopus)
     name = "Deploy to Dev"
 
     buildNumberPattern = "${Tailor_NewCiReleaseFragment_ReleaseStage.depParamRefs.buildNumber}"

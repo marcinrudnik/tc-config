@@ -1,6 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
-import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2018_2.vcs.GitVcsRoot
 
 /*
@@ -62,9 +60,6 @@ project {
             param("type", "BuildReportTab")
         }
     }
-    subProjectsOrder = arrayListOf(RelativeId("Tailor"))
-
-    subProject(Tailor)
 }
 
 object GpKansas : GitVcsRoot({
@@ -78,60 +73,6 @@ object GpKansas : GitVcsRoot({
 })
 
 object GpKansas_PullRequests : GitVcsRoot({
-    name = "GP.Kansas_PullRequest"
-    url = "git@github.com:GrupaPracuj/GP.Kansas.git"
-    branch = "refs/heads/dev"
-    branchSpec = "+:refs/pull/*/head"
-    userForTags = "GrupaPracujTeamCity <TeamCity@pracuj.pl>"
-    authMethod = uploadedKey {
-        uploadedKey = "GitHub-TeamCity"
-        passphrase = "credentialsJSON:19f9d588-a7b9-4eb3-a6f1-40c756dcfd06"
-    }
-})
-
-
-object Tailor : Project({
-    name = "Tailor"
-
-    vcsRoot(Tailor_GpKansasPullRequest)
-
-    buildType(Tailor_NewCiCommitStage)
-
-    params {
-        param("project.fragment.path", "packages/home-page")
-        param("project.fragment.name", "GP.Kansas")
-    }
-    buildTypesOrder = arrayListOf(Tailor_NewCiCommitStage)
-})
-
-object Tailor_NewCiCommitStage : BuildType({
-    templates(RelativeId("PdCommitStageNpmFragment"))
-    name = "Commit Stage"
-
-    vcs {
-        root(GpKansas, "+:%project.fragment.path% => .")
-    }
-
-    steps {
-        script {
-            name = "Authorize .npmrc"
-            id = "RUNNER_2707"
-            scriptContent = """
-                echo //gppracuj.pkgs.visualstudio.com/_packaging/gp/npm/registry/:_authToken=%azure.npm.auth_token% >> .npmrc
-                echo //gppracuj.pkgs.visualstudio.com/_packaging/gp/npm/:_authToken=%azure.npm.auth_token% >> .npmrc
-            """.trimIndent()
-        }
-    }
-
-    triggers {
-        vcs {
-            id = "vcsTrigger"
-            triggerRules = "+:%project.fragment.path%/**"
-        }
-    }
-})
-
-object Tailor_GpKansasPullRequest : GitVcsRoot({
     name = "GP.Kansas_PullRequest"
     url = "git@github.com:GrupaPracuj/GP.Kansas.git"
     branch = "refs/heads/dev"

@@ -6,7 +6,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 object Tailor_NewCiCommitStage : BuildType({
-    templates(PdCommitStageNpmFragment)
+    templates(AbsoluteId("PdCommitStageNpmFragment"))
     name = "Commit Stage"
 
     vcs {

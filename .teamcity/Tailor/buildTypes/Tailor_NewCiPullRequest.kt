@@ -1,6 +1,7 @@
 package Tailor.buildTypes
 
 import Tailor.vcsRoots.Tailor_GpKansasPullRequest
+import _Self.buildTypes.PdPullRequestStageNpmFragment
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.PullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.commitStatusPublisher
@@ -8,7 +9,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 object Tailor_NewCiPullRequest : BuildType({
-    templates(AbsoluteId("PdPullRequestStageNpmFragment"))
+    templates(PdPullRequestStageNpmFragment)
     name = "Pull Request Stage"
 
     vcs {

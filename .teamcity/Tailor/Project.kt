@@ -11,8 +11,8 @@ object Project : Project({
 
     vcsRoot(Tailor_GpKansasPullRequest)
 
-    buildType(Tailor_NewCiPullRequest)
     buildType(Tailor_NewCiCommitStage)
+    buildType(Tailor_NewCiPullRequest)
     buildType(Tailor_NewCiSonarQubeAnalysisMaster)
 
     params {

@@ -11,12 +11,14 @@ object Project : Project({
 
     vcsRoot(Tailor_GpKansasPullRequest)
 
+    buildType(Tailor_NewCiPullRequest)
     buildType(Tailor_NewCiCommitStage)
+    buildType(Tailor_NewCiSonarQubeAnalysisMaster)
 
     params {
         param("project.fragment.path", "packages/home-page")
         param("project.fragment.name", "GP.Kansas")
     }
-    buildTypesOrder = arrayListOf(Tailor_NewCiCommitStage)
+    buildTypesOrder = arrayListOf(Tailor_NewCiCommitStage, Tailor_NewCiPullRequest, Tailor_NewCiSonarQubeAnalysisMaster)
 
 })

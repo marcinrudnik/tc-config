@@ -5,8 +5,22 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 object Tailor_NewCiCommitStage : BuildType({
-    /*templates(RelativeId("PdCommitStageNpmFragment"))*/
+    //templates(AbsoluteId("PdCommitStageNpmFragment"))
     name = "Commit Stage"
+
+    params {
+        param("env.CLIENT_TRACING_URL", "#{sentry:url}")
+        param("env.TRACKER_BUSINESS_URL", "#{tracker:buisnessurl}")
+        param("env.FRAGMENT_DAILYSPECIALS", "#{fragment:dailyspecials}")
+        param("env.TRACKER_CORE_URL", "#{tracker:coreurl}")
+        param("env.FRAGMENT_FOOTER", "#{fragment:footer}")
+        param("env.TRACKER_WSID_URL", "#{tracker:wsidUrl}")
+        param("env.FRAGMENT_SEARCH", "#{fragment:search}")
+        param("env.FRAGMENT_YOUROFFERS", "#{fragment:youroffers}")
+        param("env.FRAGMENT_HEADER", "#{fragment:header}")
+        param("env.FRAGMENT_RECOMMENDATIONS", "#{fragment:recommendations}")
+        param("env.CLIENT_TRACING_ID", "#{sentry:id}")
+    }
 
     vcs {
         root(_Self.vcsRoots.GpKansas, "+:%project.fragment.path% => .")

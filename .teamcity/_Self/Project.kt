@@ -39,7 +39,7 @@ object Project : Project({
             param("type", "BuildReportTab")
         }
     }
-    subProjectsOrder = listOf(RelativeId("Tailor"))
+    subProjectsOrder = arrayListOf(RelativeId("Tailor"))
 
     subProject(Tailor.Project)
 })

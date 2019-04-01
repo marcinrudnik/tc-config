@@ -20,4 +20,5 @@ object Project : Project({
         param("project.fragment.name", "GP.Kansas")
     }
     buildTypesOrder = arrayListOf(Tailor_NewCiCommitStage, Tailor_NewCiPullRequest, Tailor_NewCiSonarQubeAnalysisMaster)
+    /*subProject(Tailor_NewCiReleaseFragment.Project)*/
 })

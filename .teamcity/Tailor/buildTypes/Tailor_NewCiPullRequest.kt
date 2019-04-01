@@ -8,7 +8,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 object Tailor_NewCiPullRequest : BuildType({
-    templates(_Self.buildTypes.PdPullRequestStageNpmFragment)
+    templates(RelativeId("dfasfasfasf"))
     name = "Pull Request Stage"
 
     vcs {

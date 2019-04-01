@@ -19,5 +19,5 @@ object Project : Project({
         param("project.fragment.path", "packages/home-page")
         param("project.fragment.name", "GP.Kansas")
     }
-    buildTypesOrder = arrayListOf(Tailor_NewCiCommitStage, Tailor_NewCiPullRequest, Tailor_NewCiSonarQubeAnalysisMaster)
+    buildTypesOrder = listOf(Tailor_NewCiCommitStage, Tailor_NewCiPullRequest, Tailor_NewCiSonarQubeAnalysisMaster)
 })

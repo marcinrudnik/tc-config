@@ -5,7 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 object Tailor_NewCiSonarQubeAnalysisMaster : BuildType({
-    /*templates(RelativeId("PdSonarQubeAnalysisNpmFragment"))*/
+    templates(RelativeId("PdSonarQubeAnalysisNpmFragment"))
     name = "SonarQube Analysis (Master)"
 
     buildNumberPattern = "${Tailor_NewCiCommitStage.depParamRefs.buildNumber}"

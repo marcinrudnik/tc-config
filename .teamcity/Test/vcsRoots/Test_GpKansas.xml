@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="jetbrains.git" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>GP.Kansas</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="TEAMCITY_SSH_KEY" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:passphrase" value="credentialsJSON:19f9d588-a7b9-4eb3-a6f1-40c756dcfd06" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="teamcity:branchSpec" value="refs/heads/*" />
+  <param name="teamcitySshKey" value="GitHub-TeamCity" />
+  <param name="url" value="git@github.com:GrupaPracuj/GP.Kansas.git" />
+  <param name="useAlternates" value="true" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+

@@ -5,7 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.vcsLabeling
 
 object Tailor_NewCiReleaseFragment_ReleaseStage : BuildType({
-    templates(AbsoluteId("PdReleaseStageNpmFragment"))
+    //templates(AbsoluteId("PdReleaseStageNpmFragment"))
     name = "Release Stage"
 
     params {

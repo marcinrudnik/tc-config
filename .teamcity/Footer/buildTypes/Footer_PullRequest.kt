@@ -1,6 +1,5 @@
 package Footer.buildTypes
 
-import Footer.vcsRoots.Footer_GpKansasPullRequest
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.PullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.commitStatusPublisher

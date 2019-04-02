@@ -1,15 +1,12 @@
 package Tailor
 
 import Tailor.buildTypes.*
-import Tailor.vcsRoots.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.Project
 
 object Project : Project({
     id("Tailor")
     name = "Tailor"
-
-    vcsRoot(Tailor_GpKansasPullRequest)
 
     buildType(Tailor_NewCiPullRequest)
     buildType(Tailor_NewCiCommitStage)

@@ -4,7 +4,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.vcs.GitVcsRoot
 
 object GpKansas : GitVcsRoot({
-    name = "GP.Kansas"
+    name = "GP.Kansas_2"
     url = "git@github.com:GrupaPracuj/GP.Kansas.git"
     branchSpec = "refs/heads/*"
     authMethod = uploadedKey {

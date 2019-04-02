@@ -6,7 +6,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.commitStatusPu
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
-object Tailor_NewCiPullRequest : BuildType({
+object Tailor_PullRequest : BuildType({
     templates(AbsoluteId("PdPullRequestStageNpmFragment"))
     name = "Pull Request Stage"
 

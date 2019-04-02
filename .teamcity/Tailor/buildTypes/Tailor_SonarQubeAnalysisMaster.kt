@@ -4,11 +4,11 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
-object Tailor_NewCiSonarQubeAnalysisMaster : BuildType({
+object Tailor_SonarQubeAnalysisMaster : BuildType({
     templates(AbsoluteId("PdSonarQubeAnalysisNpmFragment"))
     name = "SonarQube Analysis (Master)"
 
-    buildNumberPattern = "${Tailor_NewCiCommitStage.depParamRefs.buildNumber}"
+    buildNumberPattern = "${Tailor_CommitStage.depParamRefs.buildNumber}"
 
     vcs {
         root(_Self.vcsRoots.GpKansas, "+:%project.fragment.path% => .")
@@ -24,7 +24,7 @@ object Tailor_NewCiSonarQubeAnalysisMaster : BuildType({
     }
 
     dependencies {
-        snapshot(Tailor_NewCiCommitStage) {
+        snapshot(Tailor_CommitStage) {
         }
     }
 })

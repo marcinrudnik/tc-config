@@ -1,19 +1,19 @@
-package Tailor_NewCiReleaseFragment.buildTypes
+package Tailor.Tailor_ReleaseFragment.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 
-object Tailor_NewCiReleaseFragment_DeployToProduction : BuildType({
+object Tailor_ReleaseFragment_DeployToProduction : BuildType({
     templates(AbsoluteId("PdDeployFrontProjectToOctopus"))
     name = "Deploy to Production"
 
-    buildNumberPattern = "${Tailor_NewCiReleaseFragment_ReleaseStage.depParamRefs.buildNumber}"
+    buildNumberPattern = "${Tailor_ReleaseFragment_ReleaseStage.depParamRefs.buildNumber}"
 
     params {
         param("environment.name", "Production")
     }
 
     dependencies {
-        snapshot(Tailor_NewCiReleaseFragment_DeployToBeta) {
+        snapshot(Tailor_ReleaseFragment_DeployToBeta) {
             onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }

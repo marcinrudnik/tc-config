@@ -1,10 +1,10 @@
-package Tailor_NewCiReleaseFragment.buildTypes
+package Tailor.Tailor_ReleaseFragment.buildTypes
 
 import _Self.vcsRoots.GpKansas
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.vcsLabeling
 
-object Tailor_NewCiReleaseFragment_ReleaseStage : BuildType({
+object Tailor_ReleaseFragment_ReleaseStage : BuildType({
     templates(AbsoluteId("PdReleaseStageNpmFragment"))
     name = "Release Stage"
 
@@ -32,7 +32,7 @@ object Tailor_NewCiReleaseFragment_ReleaseStage : BuildType({
     }
 
     dependencies {
-        dependency(Tailor.buildTypes.Tailor_NewCiCommitStage) {
+        dependency(Tailor.buildTypes.Tailor_CommitStage) {
             snapshot {
                 onDependencyFailure = FailureAction.FAIL_TO_START
             }

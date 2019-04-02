@@ -42,4 +42,6 @@ object Project : Project({
     subProjectsOrder = arrayListOf(RelativeId("Tailor"))
 
     subProject(Tailor.Project)
+    subProject(YourOffers.Project)
+    subProject(Recommendations.Project)
 })

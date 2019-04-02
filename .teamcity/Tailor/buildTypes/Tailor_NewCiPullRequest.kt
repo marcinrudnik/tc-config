@@ -1,6 +1,5 @@
 package Tailor.buildTypes
 
-import Tailor.vcsRoots.Tailor_GpKansasPullRequest
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.PullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.commitStatusPublisher

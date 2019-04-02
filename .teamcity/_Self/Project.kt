@@ -44,4 +44,8 @@ object Project : Project({
     subProject(Tailor.Project)
     subProject(YourOffers.Project)
     subProject(Recommendations.Project)
+    subProject(Search.Project)
+    subProject(DailySpecials.Project)
+    subProject(Header.Project)
+    subProject(Footer.Project)
 })

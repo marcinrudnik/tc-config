@@ -1,10 +1,10 @@
-package Tailor.Tailor_ReleaseFragment
+package Tailor_ReleaseFragment
 
-import Tailor.Tailor_ReleaseFragment.buildTypes.*
+import Tailor_ReleaseFragment.buildTypes.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.Project
 
 object Project : Project({
-    id("Tailor/Tailor_ReleaseFragment")
+    id("Tailor_ReleaseFragment")
     name = "Release Fragment"
 
     buildType(Tailor_ReleaseFragment_DeployToDev)

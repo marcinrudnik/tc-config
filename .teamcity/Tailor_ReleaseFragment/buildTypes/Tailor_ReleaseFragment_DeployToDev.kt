@@ -1,4 +1,4 @@
-package Tailor.Tailor_ReleaseFragment.buildTypes
+package Tailor_ReleaseFragment.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 

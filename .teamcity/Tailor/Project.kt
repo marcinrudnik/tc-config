@@ -16,5 +16,5 @@ object Project : Project({
         param("project.fragment.name", "GP.Kansas")
     }
     buildTypesOrder = arrayListOf(Tailor_CommitStage, Tailor_PullRequest, Tailor_SonarQubeAnalysisMaster)
-    subProject(Tailor.Tailor_ReleaseFragment.Project)
+    subProject(Tailor_ReleaseFragment.Project)
 })

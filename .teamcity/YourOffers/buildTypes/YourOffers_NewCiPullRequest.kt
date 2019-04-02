@@ -31,7 +31,7 @@ object YourOffers_NewCiPullRequest : BuildType({
             publisher = github {
                 githubUrl = "https://api.github.com"
                 authType = personalToken {
-                    token = "credentialsJSON:d1e5ab10-b307-4bfb-ac83-048444b65c41"
+                    token = "credentialsJSON:c65bc6e3-d0a6-49ac-b1d3-6bdaf8202610"
                 }
             }
         }
@@ -40,7 +40,7 @@ object YourOffers_NewCiPullRequest : BuildType({
             vcsRootExtId = "${_Self.vcsRoots.GpKansas_PullRequests.id}"
             provider = github {
                 authType = token {
-                    token = "credentialsJSON:d1e5ab10-b307-4bfb-ac83-048444b65c41"
+                    token = "credentialsJSON:c65bc6e3-d0a6-49ac-b1d3-6bdaf8202610"
                 }
                 filterAuthorRole = PullRequests.GitHubRoleFilter.MEMBER
             }

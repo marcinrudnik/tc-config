@@ -12,7 +12,7 @@ object Tailor_NewCiPullRequest : BuildType({
     name = "Pull Request Stage"
 
     vcs {
-        root(Tailor.vcsRoots.Tailor_GpKansasPullRequest, "+:%project.fragment.path% => .")
+        root(_Self.vcsRoots.GpKansas_PullRequests, "+:%project.fragment.path% => .")
     }
 
     triggers {
@@ -28,7 +28,7 @@ object Tailor_NewCiPullRequest : BuildType({
     features {
         pullRequests {
             id = "BUILD_EXT_94"
-            vcsRootExtId = "${Tailor_GpKansasPullRequest.id}"
+            vcsRootExtId = "${_Self.vcsRoots.GpKansas_PullRequests.id}"
             provider = github {
                 authType = token {
                     token = "credentialsJSON:d1e5ab10-b307-4bfb-ac83-048444b65c41"
@@ -38,7 +38,7 @@ object Tailor_NewCiPullRequest : BuildType({
         }
         commitStatusPublisher {
             id = "BUILD_EXT_252"
-            vcsRootExtId = "${Tailor_GpKansasPullRequest.id}"
+            vcsRootExtId = "${_Self.vcsRoots.GpKansas_PullRequests.id}"
             publisher = github {
                 githubUrl = "https://api.github.com"
                 authType = personalToken {
